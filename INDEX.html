@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thư Mời Tất Niên 2026</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #00a2e8, #0072bc);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== PHÁO HOA TO – DÀY ===== */
+.firework {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: explode 1.4s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes explode {
+    0% { box-shadow: none; opacity: 1; }
+    100% {
+        box-shadow:
+        0 -130px #ffeb3b,
+        92px -92px #ff5252,
+        130px 0 #ff9800,
+        92px 92px #40c4ff,
+        0 130px #69f0ae,
+        -92px 92px #ff80ab,
+        -130px 0 #b388ff,
+        -92px -92px #ffffff;
+        opacity: 0;
+    }
+}
+
+/* ===== KHUNG THƯ ===== */
+.card {
+    max-width: 540px;
+    background: #ffffff;
+    margin: 40px auto;
+    border-radius: 18px;
+    padding: 30px 20px 34px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    position: relative;
+    z-index: 5;
+}
+
+h1 {
+    text-align: center;
+    color: #0072bc;
+    margin-top: 10px;
+}
+
+.highlight {
+    text-align: center;
+    font-weight: bold;
+    color: #0d47a1;
+}
+
+.invite {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.info {
+    margin-top: 18px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.footer {
+    margin-top: 25px;
+    text-align: center;
+    font-style: italic;
+    color: #0072bc;
+}
+
+/* ===== XÁC NHẬN ===== */
+.confirm {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.confirm button {
+    width: 46%;
+    padding: 15px;
+    margin: 6px;
+    border: none;
+    border-radius: 14px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.yes {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.no {
+    background: #c62828;
+    color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 NHẠC NỀN TẾT (instrumental) -->
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/12/21/audio_0b0c3a6e4f.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>TẤT NIÊN 2026<br>ĐIỆN MÁY XANH BÀ ĐIỂM</h1>
+
+    <p class="highlight">Tiệc chia tay anh Trường, anh Bình</p>
+
+    <p class="invite">
+        Trân trọng kính mời<br>
+        <strong>Toàn thể Nhân Viên và PG Bà Điểm</strong>
+    </p>
+
+    <div class="info">
+        📅 <strong>Ngày:</strong> 15/01/2026<br>
+        ⏰ <strong>Thời gian:</strong> 22h<br>
+        📍 <strong>Địa điểm:</strong> Quán Mộc 2<br>
+        🏠 180/4 Đ. Song Hành, Trung Chánh, Hóc Môn, TP. Hồ Chí Minh
+    </div>
+
+    <div class="confirm">
+        <h3>Xác nhận tham dự</h3>
+        <button class="yes" onclick="sendZalo()">
+            ✅ CÓ ĐI
+        </button>
+        <button class="no" onclick="openMeme()">
+            ❌ KHÔNG ĐI
+        </button>
+    </div>
+
+    <div class="footer">
+        Sự góp mặt của bạn là niềm vui của<br>
+        <strong>Điện Máy Xanh Bà Điểm</strong>
+    </div>
+</div>
+
+<script>
+/* 🎆 PHÁO HOA 5 CÁI / GIÂY */
+setInterval(() => {
+    for (let i = 0; i < 5; i++) {
+        const fw = document.createElement('div');
+        fw.className = 'firework';
+        fw.style.top = Math.random() * 100 + 'vh';
+        fw.style.left = Math.random() * 100 + 'vw';
+        document.body.appendChild(fw);
+        setTimeout(() => fw.remove(), 1400);
+    }
+}, 1000);
+
+/* 📲 CÓ ĐI → GỬI ZALO */
+function sendZalo() {
+    const text = encodeURIComponent(
+        'Xác nhận tham dự Tất Niên 2026 – ĐMX Bà Điểm\nTrạng thái: CÓ ĐI'
+    );
+    window.open('https://zalo.me/0766443336?text=' + text, '_blank');
+}
+
+/* ❌ KHÔNG ĐI → MỞ LINK MEME */
+function openMeme() {
+    window.open(
+        'https://www.thanglongwaterpuppet.org/wp-content/uploads/2025/10/meme-fuck-thuong-di-kem-hinh-anh-doc-dao-khien-cong-dong-cuoi-sang-khoai.jpg',
+        '_blank'
+    );
+}
+</script>
+
+</body>
+</html>
